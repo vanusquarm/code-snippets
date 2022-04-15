@@ -6,9 +6,15 @@ CONFIG GET * //get all commands
 SET key value
 LPUSH list_name value //set a list item
 RPUSH
-LRANGE 0-9 //get list items
+LRANGE 0 10 //get list items
 HMSET object_name key value key value //creating an object
 HMGET object_name key //get an object key's value
 SADD set_name value //set a set item
 SMEMBERS set_name //get all set items
+ZADD set_name index value //set a ordered-set item 
+ZRANGE set_name 0 10 //get all ordered-set items
+MULTI list_of_commands // creating a transaction (list of commands)
+EXEC // run the transaction 
+DISCARD // abort the transaction and delete all the commands
+
 
