@@ -1,0 +1,14 @@
+install:
+  --apt-get install redis
+  --apt-get install redis-server
+redis-cli //opens redis command line interface
+CONFIG GET * //get all commands
+SET key value
+LPUSH list_name value //set a list item
+RPUSH
+LRANGE 0-9 //get list items
+HMSET object_name key value key value //creating an object
+HMGET object_name key //get an object key's value
+SADD set_name value //set a set item
+SMEMBERS set_name //get all set items
+
