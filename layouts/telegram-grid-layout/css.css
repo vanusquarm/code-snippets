@@ -1,40 +1,30 @@
-.chat-title { grid-area: chat-title; }
-.chat-message-list { grid-area: chat-message-list; }
-.chat-form { grid-area: chat-form; }
-
-.conversation { grid-area: conversation;
-    display: grid;
-    grid: 'conversation-shortcut conversation-search' 50px
-          'conversation-shortcut conversation-list' 1fr
-          /50px 1fr;
-}
-.conversation-search { grid-area: conversation-search; }
-.conversation-list { grid-area: conversation-list; }
-.conversation-shortcut { grid-area: conversation-shortcut; }
-
+.item1 { grid-area: header; }
+.item2 { grid-area: menu;}
+.item3 { grid-area: main; }
+.item5 { grid-area: footer; }
 
 .grid-container {
+  margin: 0px;
+  border-color: red;
+  border-width: 5px;
   display: grid;
   grid:
-    'conversation chat-title' 50px
-    'conversation chat-message-list' 1fr
-    'conversation chat-form' 50px
-    /500px 1fr;
+    'menu header header header header header' 50px
+    'menu main main main main main' 1fr
+    'menu footer footer footer footer footer' 50px;
+  gap: 10px;
   background-color: #2196F3;
   padding: 10px;
   width: 100% - 40px;
   height: 95vh ;
 }
-
+.body{
+    margin: 0px;
+    padding: 0px;
+    border: 0px
+}
 .grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   font-size: 30px;
-  border: 1px solid #fff;
-}
-
-.conversation > div {
-    padding: 10px;
-    border: 1px solid #fff;
-    background-color: rgba(23, 136, 177, 0.8);
 }
