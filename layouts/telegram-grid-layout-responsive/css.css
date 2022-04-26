@@ -1,0 +1,30 @@
+.item1 { grid-area: header; }
+.item2 { grid-area: menu;}
+.item3 { grid-area: main; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  margin: 0px;
+  border-color: red;
+  border-width: 5px;
+  display: grid;
+  grid:
+    'menu header header header header header' 50px
+    'menu main main main main main' 1fr
+    'menu footer footer footer footer footer' 50px;
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+  width: 100% - 40px;
+  height: 95vh ;
+}
+.body{
+    margin: 0px;
+    padding: 0px;
+    border: 0px
+}
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  font-size: 30px;
+}
