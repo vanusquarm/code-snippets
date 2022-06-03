@@ -8,11 +8,65 @@
     <link rel="stylesheet" href="css.css" />
   </head>
   <body>
-    <div class="grid-container">
-      <div class="item1">Header</div>
-      <div class="item2">Menu</div>
-      <div class="item3">Main</div>
-      <div class="item5">Footer</div>
+    <div class="sidebar">
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
     </div>
+
+    <div class="grid-container">
+      <div class="message-block">
+        <div class="chat-title">
+          <button onclick="showConversationOnly()">back</button>
+          chat-title
+        </div>
+        <div class="chat-message-list">chat-message-list</div>
+        <div class="chat-form">chat-form</div>
+      </div>
+
+      <div class="conversation">
+        <div class="conversation-search">conversation-search</div>
+        <div class="conversation-list">conversation-list</div>
+        <div class="conversation-shortcut">
+          cs
+          <button onclick="openNav()">☰</button>
+          <button>all chats</button>
+          <button>study</button>
+          <button>edit</button>
+        </div>
+      </div>
+    </div>
+    <input id="demo" type="checkbox" />
   </body>
+
+  <script>
+    const conversation_list = document.querySelector('.conversation-list');
+    const grid_container = document.querySelector('.grid-container');
+    const message_block = document.querySelector('.message-block');
+    const conversation = document.querySelector('.conversation');
+    const media_query = window.window.matchMedia('(max-width: 600px)');
+
+    conversation_list.addEventListener('click', showMessageBlockOnly);
+    //window.addEventListener('load', showConversationOnly);
+
+    function showConversationOnly() {
+      if (media_query.matches) {
+        message_block.style.display = 'none';
+        grid_container.style.grid = '"conversation"';
+        conversation.style.display = 'grid';
+      }
+    }
+
+    function showMessageBlockOnly() {
+      if (media_query.matches) {
+        conversation.style.display = 'none';
+        grid_container.style.grid = '"message-block"';
+        message_block.style.display = 'grid';
+      }
+    }
+    function openNav() {
+      document.querySelector('.sidebar').style.width = '250px';
+    }
+  </script>
 </html>
